@@ -26,24 +26,29 @@ package org.braincopy;
 /**
  * 
  * @author Hiroaki Tateshita
- * @version 0.2.0
  */
 public class Information implements Comparable<Information> {
 
 	protected String id;
 	protected String name;
 	protected String description;
-	Location location;
+	protected Location location;
+	protected Picture picture;
 
 	public Information(String _name, Location _location) {
 		this.id = _name;
 		this.name = _name;
 		this.location = _location;
+		this.picture = null;
+		this.description = null;
 	}
 
 	public Information(String _name) {
 		this.id = _name;
 		this.name = _name;
+		this.location = null;
+		this.picture = null;
+		this.description = null;
 	}
 
 	public int compareTo(Information o) {
@@ -62,4 +67,11 @@ public class Information implements Comparable<Information> {
 		return this.location;
 	}
 
+	public Picture getPicture() {
+		return this.picture;
+	}
+
+	public void setPicture(Picture _picture) {
+		this.picture = _picture;
+	}
 }
