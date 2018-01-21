@@ -23,12 +23,18 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 package org.braincopy;
 
+/**
+ * Link is a class to connect the objects of {@link Information}.
+ * 
+ * @author Hiroaki Tateshita
+ *
+ */
 public class Link implements Comparable<Link> {
-	String name;
-	String source;
-	String target;
+	protected String name;
+	protected Information source;
+	protected Information target;
 
-	public Link(String _name, String _source, String _target) {
+	public Link(String _name, Information _source, Information _target) {
 		super();
 		this.name = _name;
 		this.source = _source;
@@ -47,11 +53,19 @@ public class Link implements Comparable<Link> {
 		return this.name;
 	}
 
-	public String getSource() {
+	public Information getSource() {
 		return this.source;
 	}
 
-	public String getTarget() {
+	public Information getTarget() {
 		return this.target;
+	}
+
+	public String getSourceName() {
+		return this.source.getName();
+	}
+
+	public String getTargetName() {
+		return this.target.getName();
 	}
 }

@@ -1,6 +1,6 @@
 /*
 
-Copyright (c) 2017-2018 Hiroaki Tateshita
+Copyright (c) 2018 Hiroaki Tateshita
 
 Permission is hereby granted, free of charge, to any person obtaining a copy 
 of this software and associated documentation files (the "Software"), to deal
@@ -23,59 +23,12 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 package org.braincopy;
 
-import java.util.List;
-
 /**
- * Information is a class to abstract any information in the world.
  * 
  * @author Hiroaki Tateshita
+ *
  */
-public class Information implements Comparable<Information> {
+public class File {
+	protected String fileName;
 
-	protected String id;
-	protected String name;
-	protected String description;
-	protected Location location;
-	protected List<File> fileList;
-	protected Picture picture;
-
-	public Information(String _name, Location _location) {
-		this.id = _name;
-		this.name = _name;
-		this.location = _location;
-		this.picture = null;
-		this.description = null;
-	}
-
-	public Information(String _name) {
-		this.id = _name;
-		this.name = _name;
-		this.location = null;
-		this.picture = null;
-		this.description = null;
-	}
-
-	public int compareTo(Information o) {
-		return this.id.compareTo(o.id);
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public String toString() {
-		return this.name;
-	}
-
-	public Location getLocation() {
-		return this.location;
-	}
-
-	public Picture getPicture() {
-		return this.picture;
-	}
-
-	public void setPicture(Picture _picture) {
-		this.picture = _picture;
-	}
 }

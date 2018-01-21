@@ -24,12 +24,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 package org.braincopy;
 
 /**
+ * Picture is a class to deal with picture files such as jpg, png, and gif.
  * 
  * @author Hiroaki Tateshita
  *
  */
-public class Picture {
-	String fileName;
+public class Picture extends File {
+	// protected String fileName;
 
 	/**
 	 * Currently Braincopy library use "jpg", "png", "gif", "jpeg" as file extension

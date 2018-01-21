@@ -29,9 +29,9 @@ package org.braincopy;
  *
  */
 public class Location {
-	double lat;
-	double lon;
-	double height;
+	protected double lat;
+	protected double lon;
+	protected double height;
 
 	public Location(double _lat, double _lon) {
 		super();
