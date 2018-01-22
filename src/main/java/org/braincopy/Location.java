@@ -24,25 +24,56 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 package org.braincopy;
 
 /**
+ * is a class to abstract location of an object of {@link Information}
  * 
  * @author Hiroaki Tateshita
  *
  */
 public class Location {
+
+	/**
+	 * is latitude which is supposed to be use with the unit "degree".
+	 */
 	protected double lat;
+
+	/**
+	 * is longitude which is supposed to be use with the unit "degree".
+	 */
 	protected double lon;
+
+	/**
+	 * is height which is supposed to be use with the unit "meter".
+	 */
 	protected double height;
 
+	/**
+	 * is constructor of Location object.
+	 * 
+	 * @param _lat
+	 *            latitude [deg]
+	 * @param _lon
+	 *            longitude [deg]
+	 */
 	public Location(double _lat, double _lon) {
 		super();
 		this.lat = _lat;
 		this.lon = _lon;
 	}
 
+	/**
+	 * returns the longitude of the location
+	 * 
+	 * @return longitude [deg]
+	 */
 	public double getLon() {
 		return this.lon;
 	}
 
+	/**
+	 * returns the latitude of the location
+	 * 
+	 * @return latitude [deg]
+	 */
 	public double getLat() {
 		return this.lat;
 	}

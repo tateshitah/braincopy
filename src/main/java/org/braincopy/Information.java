@@ -26,19 +26,49 @@ package org.braincopy;
 import java.util.List;
 
 /**
- * Information is a class to abstract any information in the world.
+ * is a class to abstract any information in the world.
  * 
  * @author Hiroaki Tateshita
  */
 public class Information implements Comparable<Information> {
 
+	/**
+	 * is a field to identify this information object. it is usually same with
+	 * {@link Information#name}
+	 */
 	protected String id;
+
+	/**
+	 * is a name to identify this information object. it is usually same with
+	 * {@link Information#id}
+	 */
 	protected String name;
+
+	/**
+	 * 
+	 */
 	protected String description;
+
+	/**
+	 * 
+	 */
 	protected Location location;
+
+	/**
+	 * 
+	 */
 	protected List<File> fileList;
+
+	/**
+	 * @deprecated
+	 */
 	protected Picture picture;
 
+	/**
+	 * 
+	 * @param _name
+	 * @param _location
+	 */
 	public Information(String _name, Location _location) {
 		this.id = _name;
 		this.name = _name;
@@ -47,6 +77,10 @@ public class Information implements Comparable<Information> {
 		this.description = null;
 	}
 
+	/**
+	 * 
+	 * @param _name
+	 */
 	public Information(String _name) {
 		this.id = _name;
 		this.name = _name;
@@ -55,26 +89,48 @@ public class Information implements Comparable<Information> {
 		this.description = null;
 	}
 
+	/**
+	 * 
+	 */
 	public int compareTo(Information o) {
 		return this.id.compareTo(o.id);
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String getName() {
 		return this.name;
 	}
 
+	/**
+	 * 
+	 */
 	public String toString() {
 		return this.name;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public Location getLocation() {
 		return this.location;
 	}
 
+	/**
+	 * @deprecated
+	 * @return
+	 */
 	public Picture getPicture() {
 		return this.picture;
 	}
 
+	/**
+	 * @deprecated
+	 * @param _picture
+	 */
 	public void setPicture(Picture _picture) {
 		this.picture = _picture;
 	}

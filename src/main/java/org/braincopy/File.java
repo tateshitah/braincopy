@@ -24,11 +24,24 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 package org.braincopy;
 
 /**
+ * is a class to abstract File which is attached on an object of
+ * {@link Information}
  * 
  * @author Hiroaki Tateshita
  *
  */
 public class File {
+	/**
+	 * is the name of this file object.
+	 */
 	protected String fileName;
 
+	/**
+	 * return the name of this file.
+	 * 
+	 * @return fileName of this file
+	 */
+	public String getFileName() {
+		return this.fileName;
+	}
 }

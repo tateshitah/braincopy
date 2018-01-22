@@ -24,22 +24,23 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 package org.braincopy;
 
 /**
- * Picture is a class to deal with picture files such as jpg, png, and gif.
+ * is a class to abstract picture files such as jpg, png, and gif.
  * 
  * @author Hiroaki Tateshita
  *
  */
 public class Picture extends File {
-	// protected String fileName;
 
 	/**
-	 * Currently Braincopy library use "jpg", "png", "gif", "jpeg" as file extension
-	 * of Picture files. So other extensions such as xcf cannot be used as picture
-	 * file. The picture member throw exception.
+	 * construct a new Picture object. Currently Braincopy library use "jpg", "png",
+	 * "gif", "jpeg" as file extension of Picture files. So when other extensions
+	 * such as xcf cannot be used as picture file, this object should throw
+	 * exception.
 	 * 
 	 * @param _fileName
 	 *            { "jpg", "png", "gif", "jpeg" }
 	 * @throws IllegalFileNameException
+	 *             is thrown if the file name is not picture's name.
 	 */
 	public Picture(String _fileName) throws IllegalFileNameException {
 		if (Picture.isPictureFileName(_fileName)) {
@@ -50,11 +51,13 @@ public class Picture extends File {
 	}
 
 	/**
-	 * Currently Braincopy library use "jpg", "png", "gif", "jpeg" as file extension
-	 * of Picture files. This static method provides check filenames.
+	 * checks the filename of picture files correct or not. Currently Braincopy
+	 * library use "jpg", "png", "gif", "jpeg" as file extension of Picture files.]
 	 * 
 	 * @param fileName
-	 * @return
+	 *            is the name of file which you may want to check.
+	 * @return {@code true} if this {@code fileName} has the extension of picture
+	 *         file such as "jpg" and "gif", {@code false} otherwise
 	 */
 	public static boolean isPictureFileName(String fileName) {
 		boolean result = false;
@@ -66,10 +69,6 @@ public class Picture extends File {
 			}
 		}
 		return result;
-	}
-
-	public String getFileName() {
-		return this.fileName;
 	}
 
 }
