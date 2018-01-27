@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.braincopy</groupId>
 	<artifactId>braincopy</artifactId>
-	<version>0.7.1</version>
+	<version>0.7.3</version>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>

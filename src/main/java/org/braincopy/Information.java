@@ -23,6 +23,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 package org.braincopy;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -45,93 +46,123 @@ public class Information implements Comparable<Information> {
 	protected String name;
 
 	/**
-	 * 
+	 * is supposed to be the overview of this information
 	 */
 	protected String description;
 
 	/**
-	 * 
+	 * is supposed to be a location strongly related to this information
 	 */
 	protected Location location;
 
 	/**
-	 * 
+	 * is a collection of files attached to this information, including picture
+	 * files.
 	 */
 	protected List<File> fileList;
 
 	/**
-	 * @deprecated
+	 * is a file of picture. in the future, this field will be deleted.
+	 * 
+	 * @deprecated replaced by {@link #fileList}
 	 */
 	protected Picture picture;
 
 	/**
+	 * constructs this object with its name and location
 	 * 
 	 * @param _name
+	 *            not {@code null}
 	 * @param _location
 	 */
 	public Information(String _name, Location _location) {
 		this.id = _name;
 		this.name = _name;
 		this.location = _location;
-		this.picture = null;
 		this.description = null;
 	}
 
 	/**
+	 * constructs this object with its name
 	 * 
 	 * @param _name
+	 *            not {@code null}
 	 */
 	public Information(String _name) {
 		this.id = _name;
 		this.name = _name;
 		this.location = null;
-		this.picture = null;
 		this.description = null;
 	}
 
 	/**
-	 * 
+	 * compare with this {@link #id}
 	 */
 	public int compareTo(Information o) {
 		return this.id.compareTo(o.id);
 	}
 
 	/**
+	 * returns the name of this object.
 	 * 
-	 * @return
+	 * @return name not {@code null}
 	 */
 	public String getName() {
 		return this.name;
 	}
 
 	/**
-	 * 
+	 * returns the name of this object.
 	 */
 	public String toString() {
 		return this.name;
 	}
 
 	/**
+	 * returns the location object owned by this Information object.
 	 * 
-	 * @return
+	 * @return location. returns {@code null} if this {@link Information} object
+	 *         does not have location.
 	 */
 	public Location getLocation() {
 		return this.location;
 	}
 
 	/**
-	 * @deprecated
-	 * @return
+	 * provide a picture object owned by this {@link Information} object. If this
+	 * {@link Information} object does not have any {@link Picture} object, this
+	 * method will return null. If this {@link Information} object has more than two
+	 * {@link Picture} objects, this method returns the first added Picture object.
+	 * 
+	 * @return picture object. returns {@code null} if this Information object does
+	 *         not have a Picture object
 	 */
 	public Picture getPicture() {
-		return this.picture;
+		Picture result = null;
+		if (this.fileList != null) {
+			for (File file : this.fileList) {
+				if (file instanceof Picture) {
+					result = (Picture) file;
+					break;
+				}
+			}
+		}
+
+		// return this.picture;
+		return result;
 	}
 
 	/**
-	 * @deprecated
+	 * adds an object of Picture class.
+	 * 
 	 * @param _picture
+	 *            not {@code null}
 	 */
 	public void setPicture(Picture _picture) {
-		this.picture = _picture;
+		if (this.fileList == null) {
+			this.fileList = new ArrayList<File>();
+		}
+		this.fileList.add(_picture);
+		// this.picture = _picture;
 	}
 }
