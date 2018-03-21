@@ -1,6 +1,6 @@
 /*
 
-Copyright (c) 2017 Hiroaki Tateshita
+Copyright (c) 2017-2018 Hiroaki Tateshita
 
 Permission is hereby granted, free of charge, to any person obtaining a copy 
 of this software and associated documentation files (the "Software"), to deal
@@ -23,35 +23,99 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 package org.braincopy;
 
+/**
+ * Link is a class to connect the objects of {@link Information}. This object
+ * connect from source information to target information.
+ * 
+ * @author Hiroaki Tateshita
+ *
+ */
 public class Link implements Comparable<Link> {
-	String name;
-	String source;
-	String target;
 
-	public Link(String _name, String _source, String _target) {
+	/**
+	 * is a name of the link
+	 */
+	protected String name;
+
+	/**
+	 * is the start point of this link.
+	 */
+	protected Information source;
+
+	/**
+	 * is the end point of this link.
+	 */
+	protected Information target;
+
+	/**
+	 * constructs a link object with source information (start point) and target
+	 * information (end point)
+	 * 
+	 * @param _name
+	 *            is the name of this link object
+	 * @param _source
+	 *            is the source information
+	 * @param _target
+	 *            is the target information
+	 */
+	public Link(String _name, Information _source, Information _target) {
 		super();
 		this.name = _name;
 		this.source = _source;
 		this.target = _target;
 	}
 
+	/**
+	 * {@link String#compareTo(String)}
+	 */
 	public int compareTo(Link o) {
 		return this.name.compareTo(o.name);
 	}
 
+	/**
+	 * @return the name of this link object
+	 */
 	public String toString() {
 		return this.name;
 	}
 
+	/**
+	 * 
+	 * @return the name of this link object
+	 */
 	public String getName() {
 		return this.name;
 	}
 
-	public String getSource() {
+	/**
+	 * 
+	 * @return the source information object
+	 */
+	public Information getSource() {
 		return this.source;
 	}
 
-	public String getTarget() {
+	/**
+	 * 
+	 * @return the target information object
+	 */
+	public Information getTarget() {
 		return this.target;
+	}
+
+	/**
+	 * 
+	 * @return the name of the source information object
+	 */
+	public String getSourceName() {
+		return this.source.getName();
+	}
+
+	/**
+	 * 
+	 * @return the name of the target information object
+	 */
+	public String getTargetName() {
+		return this.target.getName();
 	}
 }

@@ -1,6 +1,6 @@
 /*
 
-Copyright (c) 2017 Hiroaki Tateshita
+Copyright (c) 2018 Hiroaki Tateshita
 
 Permission is hereby granted, free of charge, to any person obtaining a copy 
 of this software and associated documentation files (the "Software"), to deal
@@ -24,58 +24,24 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 package org.braincopy;
 
 /**
- * is a class to abstract location of an object of {@link Information}
+ * is a class to abstract File which is attached on an object of
+ * {@link Information}
  * 
  * @author Hiroaki Tateshita
  *
  */
-public class Location {
-
+public class File {
 	/**
-	 * is latitude which is supposed to be use with the unit "degree".
+	 * is the name of this file object.
 	 */
-	protected double lat;
+	protected String fileName;
 
 	/**
-	 * is longitude which is supposed to be use with the unit "degree".
-	 */
-	protected double lon;
-
-	/**
-	 * is height which is supposed to be use with the unit "meter".
-	 */
-	protected double height;
-
-	/**
-	 * is constructor of Location object.
+	 * return the name of this file.
 	 * 
-	 * @param _lat
-	 *            latitude [deg]
-	 * @param _lon
-	 *            longitude [deg]
+	 * @return fileName of this file
 	 */
-	public Location(double _lat, double _lon) {
-		super();
-		this.lat = _lat;
-		this.lon = _lon;
+	public String getFileName() {
+		return this.fileName;
 	}
-
-	/**
-	 * returns the longitude of the location
-	 * 
-	 * @return longitude [deg]
-	 */
-	public double getLon() {
-		return this.lon;
-	}
-
-	/**
-	 * returns the latitude of the location
-	 * 
-	 * @return latitude [deg]
-	 */
-	public double getLat() {
-		return this.lat;
-	}
-
 }

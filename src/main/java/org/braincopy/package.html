@@ -1,5 +1,4 @@
-/*
-
+<!--
 Copyright (c) 2017 Hiroaki Tateshita
 
 Permission is hereby granted, free of charge, to any person obtaining a copy 
@@ -18,64 +17,21 @@ PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIG
 HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>braincopy package</title>
+</head>
+<body>
+	The basic package of Braincopy Library. This package contains some
+	classes to abstract "information". Those classes are supposed to be
+	used as temporary containers.
 
- */
-
-package org.braincopy;
-
-/**
- * is a class to abstract location of an object of {@link Information}
- * 
- * @author Hiroaki Tateshita
- *
- */
-public class Location {
-
-	/**
-	 * is latitude which is supposed to be use with the unit "degree".
-	 */
-	protected double lat;
-
-	/**
-	 * is longitude which is supposed to be use with the unit "degree".
-	 */
-	protected double lon;
-
-	/**
-	 * is height which is supposed to be use with the unit "meter".
-	 */
-	protected double height;
-
-	/**
-	 * is constructor of Location object.
-	 * 
-	 * @param _lat
-	 *            latitude [deg]
-	 * @param _lon
-	 *            longitude [deg]
-	 */
-	public Location(double _lat, double _lon) {
-		super();
-		this.lat = _lat;
-		this.lon = _lon;
-	}
-
-	/**
-	 * returns the longitude of the location
-	 * 
-	 * @return longitude [deg]
-	 */
-	public double getLon() {
-		return this.lon;
-	}
-
-	/**
-	 * returns the latitude of the location
-	 * 
-	 * @return latitude [deg]
-	 */
-	public double getLat() {
-		return this.lat;
-	}
-
-}
+	<h3>Package Specification</h3>
+	<img src="https://braincopy.org/JSPWiki/attach/Abstract%20information/braincopy.png" alt="class diagram of braincopy library" title="class diagram of braincopy library">
+	<h3>Related Documentation</h3>
+	<a href="https://braincopy.org/JSPWiki/Wiki.jsp?page=Braincopy%20library">Explanation in Braincopy Wiki</a>
+</body>
+</html>
